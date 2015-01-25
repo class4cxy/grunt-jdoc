@@ -1,0 +1,12 @@
+{
+  "name": "grunt-jdoc",
+  "description": "自动生成api文档数据DEMO",
+  "version": "0.0.1",
+  "author": {
+    "name": "jdochen",
+    "url": "http://www.alloyteam.com/"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1"
+  }
+}
