@@ -1,5 +1,5 @@
 /**
- * @method app.checkAppInstalled
+ * @function app.checkAppInstalled
  * @desc 通过packageName(Android)获取本地指定应用的本版号
  *
  * @param {String} identifier 要查询的 identifier。如：Android 微信是 "com.tencent.mm"。
@@ -15,6 +15,20 @@
  * @support android 4.2
  */
 
+/**
+ * @namespace app
+ * @desc 应用模块
+ * @support iOS not support
+ * @support android 4.2
+ */
+
+
+/**
+ * @event qbrowserPullDown
+ * @页面下拉刷新是后会抛出该事件
+ * @support iOS 5.3
+ * @support android 5.3
+ */
 mqq.build('mqq.app.checkAppInstalled', {
     android: function(identifier, callback){
         mqq.invoke('QQApi', 'checkAppInstalled', identifier, callback);

@@ -5,7 +5,7 @@
         pkg: grunt.file.readJSON('package.json'),
         jdoc: {
             all: {
-                src: './js/checkAppInstalled.js',
+                src: './js/app/checkAppInstalled.js',
                 target: 'docs'
             }
         }
