@@ -29,6 +29,17 @@
  * @support iOS 5.3
  * @support android 5.3
  */
+
+/**
+ * @class Animal
+ * @desc 动物类
+ */
+
+/**
+ * @function Animal.run
+ * @desc 奔跑吧
+ */
+
 mqq.build('mqq.app.checkAppInstalled', {
     android: function(identifier, callback){
         mqq.invoke('QQApi', 'checkAppInstalled', identifier, callback);
