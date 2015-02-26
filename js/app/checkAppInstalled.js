@@ -36,10 +36,22 @@
  */
 
 /**
- * @function Animal.run
+ * @prototype Animal.run
  * @desc 奔跑吧
+ * @type Function
+ *
+ * @param {String} identifier 要查询的 identifier。如：Android 微信是 "com.tencent.mm"。
+ * @param {Function} callback 回调函数
+ * @param {String} callback.result 返回查询结果。正常返回 app 的版本号字符串，若没有查询到则返回 0 字符串
+ *
  */
 
+/**
+ * @prototype Animal.sex
+ * @desc 性别
+ * @type property
+ *
+ */
 mqq.build('mqq.app.checkAppInstalled', {
     android: function(identifier, callback){
         mqq.invoke('QQApi', 'checkAppInstalled', identifier, callback);
