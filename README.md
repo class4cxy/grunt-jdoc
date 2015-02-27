@@ -25,62 +25,39 @@ In your project's Gruntfile, add a section named `jdoc` to the data object passe
 ```js
 grunt.initConfig({
   jdoc: {
-    options: {
-      // Task-specific options go here.
-    },
     your_target: {
-      // Target-specific file lists and/or options go here.
-    },
-  },
+      // js source file you want to build from
+      src: 'test/js/checkAppInstalled.js',
+      // the path for `doc.json` generate to
+      target: 'docs'
+    }
+  }
 });
 ```
+## js demo
 
-### Options
-
-#### options.separator
-Type: `String`
-Default value: `',  '`
-
-A string value that is used to do something with whatever.
-
-#### options.punctuation
-Type: `String`
-Default value: `'.'`
-
-A string value that is used to do something else with whatever else.
-
-### Usage Examples
-
-#### Default Options
-In this example, the default options are used to do something with whatever. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result would be `Testing, 1 2 3.`
-
+### `function`
 ```js
-grunt.initConfig({
-  jdoc: {
-    options: {},
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
-  },
-});
+/**
+ * @function checkAppInstalled
+ * @desc 通过packageName(Android)获取本地指定应用的本版号
+ *
+ * @param {String} identifier 要查询的 identifier。
+ * @param {Function} callback 回调函数
+ * @param {String} callback.result 返回查询结果。正常返回 app 的版本号字符串，若没有查询到则返回 0 字符串
+ *
+ * @example
+ * app.checkAppInstalled(id, function (ret) {
+ *     console.log(ret);
+ * });
+ *
+ */
 ```
-
-#### Custom Options
-In this example, custom options are used to do something else with whatever else. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result in this case would be `Testing: 1 2 3 !!!`
-
-```js
-grunt.initConfig({
-  jdoc: {
-    options: {
-      separator: ': ',
-      punctuation: ' !!!',
-    },
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
-  },
-});
-```
+If `function` is on some space, for example : `app.checkAppInstalled`
+/**
+ * @function app.checkAppInstalled
+ * ...
+ */
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
