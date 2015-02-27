@@ -44,7 +44,7 @@ grunt.initConfig({
  *
  * @param {String} identifier 要查询的 identifier。
  * @param {Function} callback 回调函数
- * @param {String} callback.result 返回查询结果。正常返回 app 的版本号字符串，若没有查询到则返回 0 字符串
+ * @param {String} callback.result 返回查询结果。
  *
  * @example
  * app.checkAppInstalled(id, function (ret) {
@@ -53,11 +53,73 @@ grunt.initConfig({
  *
  */
 ```
-If `function` is on some space, for example : `app.checkAppInstalled`
+If the `function` is on some namespace, for example : `app.checkAppInstalled`
+```js
 /**
  * @function app.checkAppInstalled
  * ...
  */
+```
+
+### `namespace`
+If you want to note namespace alone, for example : `app`
+```js
+/**
+ * @namespace app
+ * @desc 应用模块
+ */
+```
+
+### `attribute`
+```js
+/**
+ * @attribute isAppInstalled
+ * @desc 是否安装标识
+ */
+```
+If the `attribute` is on some namespace, for example : `app.isAppInstalled`
+```js
+/**
+ * @attribute app.isAppInstalled
+ * ...
+ */
+```
+
+### `event`
+```js
+/**
+ * @event qbrowserPullDown
+ * @desc 页面下拉刷新是后会抛出该事件
+ * @example
+ * mqq.addEventListener("qbrowserPullDown", function () {
+ *     // your code
+ * });
+ */
+```
+
+### `class`
+```js
+/**
+ * @class Animal
+ * @desc 动物类
+ */
+```
+```js
+/**
+ * @prototype Animal.run
+ * @desc 奔跑吧
+ * @type Function
+ *
+ */
+```
+```js
+/**
+ * @prototype Animal.sex
+ * @desc 性别
+ * @type property
+ *
+ */
+```
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
