@@ -170,6 +170,7 @@ If the `attribute` is on some namespace, for example : `app.isAppInstalled`
  */
 ```
 ### `event` - doc.json
+```js
 {
   "event": {
     "qbrowserPullDown": {
@@ -186,6 +187,7 @@ If the `attribute` is on some namespace, for example : `app.isAppInstalled`
     }
   }
 }
+```
 
 ### `class`
 ```js
