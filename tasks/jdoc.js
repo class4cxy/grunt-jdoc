@@ -98,12 +98,10 @@ module.exports = function (grunt) {
                         handler = docJSON;
                         n = ns;
                     }
-                    if ( type === 'function' ) {
-                        handler.property[n] = re;
-                    } else {
-                        if ( !handler[type] ) handler[type] = {};
-                        handler[type][n] = re;
-                    }
+                    if ( type === 'function' ) type = 'property';
+                    
+                    if ( !handler[type] ) handler[type] = {};
+                    handler[type][n] = re;
                 }
             }
 
