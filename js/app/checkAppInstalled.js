@@ -16,6 +16,13 @@
  */
 
 /**
+ * @attribute app.isAppInstalled
+ * @desc 是否安装
+ * @support iOS not support
+ * @support android 4.2
+ */
+
+/**
  * @namespace app
  * @desc 应用模块
  * @support iOS not support
