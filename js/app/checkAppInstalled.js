@@ -25,7 +25,11 @@
 
 /**
  * @event qbrowserPullDown
- * @页面下拉刷新是后会抛出该事件
+ * @desc 页面下拉刷新是后会抛出该事件
+ * @example
+ * mqq.app.checkAppInstalled(id, function (ret) {
+ *     console.log(ret); // 5.3.1
+ * });
  * @support iOS 5.3
  * @support android 5.3
  */
@@ -33,6 +37,11 @@
 /**
  * @class Animal
  * @desc 动物类
+ */
+
+/**
+ * @class app.Persion
+ * @desc 人类
  */
 
 /**
