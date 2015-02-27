@@ -60,6 +60,52 @@ If the `function` is on some namespace, for example : `app.checkAppInstalled`
  * ...
  */
 ```
+### `function` - doc.json
+```js
+{
+  "app": {
+    "property": {
+      "checkAppInstalled": {
+        "detail": {
+          "function": "app.checkAppInstalled",
+          "desc": "通过packageName(Android)获取本地指定应用的本版号",
+          "param": [
+            {
+              "key": "param",
+              "field": "identifier",
+              "type": "String",
+              "optional": false,
+              "desc": " 要查询的 identifier。\r"
+            },
+            {
+              "key": "param",
+              "field": "callback",
+              "type": "Function",
+              "optional": false,
+              "desc": " 回调函数\r",
+              "param": [
+                {
+                  "key": "param",
+                  "field": "result",
+                  "type": "String",
+                  "optional": false,
+                  "desc": " 返回查询结果。\r"
+                }
+              ]
+            }
+          ],
+          "example": [
+            {
+              "key": "example",
+              "field": "\n checkAppInstalled(id, function (result) {\r\n     console.log(result);\r\n });\r\n \n"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
+```
 
 ### `namespace`
 If you want to note namespace alone, for example : `app`
@@ -68,6 +114,18 @@ If you want to note namespace alone, for example : `app`
  * @namespace app
  * @desc 应用模块
  */
+```
+### `namespace` - doc.json
+```js
+{
+  "app": {
+    "property": {},
+    "detail": {
+      "namespace": "app",
+      "desc": "应用模块"
+    }
+  }
+}
 ```
 
 ### `attribute`
@@ -84,6 +142,21 @@ If the `attribute` is on some namespace, for example : `app.isAppInstalled`
  * ...
  */
 ```
+### `attribute` - doc.json
+```js
+{
+  "app": {
+    "property": {
+      "isAppInstalled": {
+        "detail": {
+          "attribute": "app.isAppInstalled",
+          "desc": "是否安装"
+        }
+      }
+    }
+  }
+}
+```
 
 ### `event`
 ```js
@@ -96,6 +169,23 @@ If the `attribute` is on some namespace, for example : `app.isAppInstalled`
  * });
  */
 ```
+### `event` - doc.json
+{
+  "event": {
+    "qbrowserPullDown": {
+      "detail": {
+        "event": "qbrowserPullDown",
+        "desc": "页面下拉刷新是后会抛出该事件",
+        "example": [
+          {
+            "key": "example",
+            "field": "\n mqq.addEventListener(\"qbrowserPullDown\", function () {\r\n     // your code\r\n });\r\n"
+          }
+        ]
+      }
+    }
+  }
+}
 
 ### `class`
 ```js
@@ -119,6 +209,43 @@ If the `attribute` is on some namespace, for example : `app.isAppInstalled`
  * @type property
  *
  */
+```
+### `class` - doc.json
+```js
+{
+  "class": {
+    "Animal": {
+      "detail": {
+        "class": "Animal",
+        "desc": "动物类"
+      },
+      "proto": {
+        "run": {
+          "prototype": [
+            {
+              "key": "prototype",
+              "field": "Animal.run",
+              "belong": ""
+            }
+          ],
+          "desc": "奔跑吧",
+          "type": "Function"
+        },
+        "sex": {
+          "prototype": [
+            {
+              "key": "prototype",
+              "field": "Animal.sex",
+              "belong": ""
+            }
+          ],
+          "desc": "性别",
+          "type": "property"
+        }
+      }
+    }
+  }
+}
 ```
 
 ## Contributing
