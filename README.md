@@ -182,24 +182,12 @@ If the `attribute` is on some namespace, for example : `app.isAppInstalled`
       },
       "proto": {
         "run": {
-          "prototype": [
-            {
-              "key": "prototype",
-              "field": "Animal.run",
-              "belong": ""
-            }
-          ],
+          "prototype": "Animal.run",
           "desc": "奔跑吧",
           "type": "Function"
         },
         "sex": {
-          "prototype": [
-            {
-              "key": "prototype",
-              "field": "Animal.sex",
-              "belong": ""
-            }
-          ],
+          "prototype": "Animal.sex",
           "desc": "性别",
           "type": "property"
         }
