@@ -41,23 +41,13 @@ grunt.initConfig({
 /**
  * @function checkAppInstalled
  * @desc 通过packageName(Android)获取本地指定应用的本版号
- *
- * @param {String} identifier 要查询的 identifier。
- * @param {Function} callback 回调函数
- * @param {String} callback.result 返回查询结果。
- *
- * @example
- * app.checkAppInstalled(id, function (ret) {
- *     console.log(ret);
- * });
- *
  */
 ```
 If the `function` is on some namespace, for example : `app.checkAppInstalled`
 ```js
 /**
  * @function app.checkAppInstalled
- * ...
+ * @desc 通过packageName(Android)获取本地指定应用的本版号
  */
 ```
 ### `function` - doc.json
@@ -68,38 +58,7 @@ If the `function` is on some namespace, for example : `app.checkAppInstalled`
       "checkAppInstalled": {
         "detail": {
           "function": "app.checkAppInstalled",
-          "desc": "通过packageName(Android)获取本地指定应用的本版号",
-          "param": [
-            {
-              "key": "param",
-              "field": "identifier",
-              "type": "String",
-              "optional": false,
-              "desc": " 要查询的 identifier。\r"
-            },
-            {
-              "key": "param",
-              "field": "callback",
-              "type": "Function",
-              "optional": false,
-              "desc": " 回调函数\r",
-              "param": [
-                {
-                  "key": "param",
-                  "field": "result",
-                  "type": "String",
-                  "optional": false,
-                  "desc": " 返回查询结果。\r"
-                }
-              ]
-            }
-          ],
-          "example": [
-            {
-              "key": "example",
-              "field": "\n checkAppInstalled(id, function (result) {\r\n     console.log(result);\r\n });\r\n \n"
-            }
-          ]
+          "desc": "通过packageName(Android)获取本地指定应用的本版号"
         }
       }
     }
@@ -249,6 +208,121 @@ If the `attribute` is on some namespace, for example : `app.isAppInstalled`
   }
 }
 ```
+### `param`
+```js
+/**
+ * @function app.checkAppInstalled
+ * @desc 通过packageName(Android)获取本地指定应用的本版号
+ *
+ * @param {String} identifier 要查询的 identifier。
+ * @param {Function} callback 回调函数
+ * @param {String} callback.result 返回查询结果。
+ * @options for callback.result 0 - 没安装
+ * @options for callback.result 1 - 已安装
+ *
+ * @note for identifier 这是关于`identifier`的提示
+ */
+```
+### `param` - doc.json
+```js
+{
+  "app": {
+    "property": {
+      "checkAppInstalled": {
+        "detail": {
+          "function": "app.checkAppInstalled",
+          "desc": "通过packageName(Android)获取本地指定应用的本版号",
+          "options": [],
+          "note": [],
+          "param": [
+            {
+              "key": "param",
+              "field": "identifier",
+              "type": "String",
+              "optional": false,
+              "desc": " 要查询的 identifier。\r",
+              "note": [
+                {
+                  "key": "note",
+                  "field": "这是关于`identifier`的提示",
+                  "belong": "identifier"
+                }
+              ]
+            },
+            {
+              "key": "param",
+              "field": "callback",
+              "type": "Function",
+              "optional": false,
+              "desc": " 回调函数\r",
+              "param": [
+                {
+                  "key": "param",
+                  "field": "result",
+                  "type": "String",
+                  "optional": false,
+                  "desc": " 返回查询结果。\r",
+                  "options": [
+                    {
+                      "key": "options",
+                      "field": "1 - 已安装",
+                      "belong": "callback.result"
+                    },
+                    {
+                      "key": "options",
+                      "field": "0 - 没安装",
+                      "belong": "callback.result"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+}
+```
+* you can describe `object` by use `.`
+* also you can use `for` keyword to extend some specific `param`
+### `example`
+```js
+/**
+ * @function app.checkAppInstalled
+ * @desc 通过packageName(Android)获取本地指定应用的本版号
+ * @example
+ * mqq.app.checkAppInstalled(id, function (ret) {
+ *     console.log(ret);
+ * });
+ */
+```
+### `example` - doc.json
+```js
+{
+  "app": {
+    "property": {
+      "checkAppInstalled": {
+        "detail": {
+          "function": "app.checkAppInstalled",
+          "desc": "通过packageName(Android)获取本地指定应用的本版号",
+          "example": [
+            {
+              "key": "example",
+              "field": "\n mqq.app.checkAppInstalled(id, function (ret) {\r\n     console.log(ret); // 5.3.1\r\n });\r\n"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
+```
+* you can note more than one examples
+
+### `more`
+* you can use any note tag you want, for example: `@support`, `@note`, `@important` etc.
+* every user-defined tag can use `for` keyword to extend some specific `param`
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
