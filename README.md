@@ -36,7 +36,7 @@ grunt.initConfig({
 ```
 ## js demo
 
-### `function`
+### `@function`
 ```js
 /**
  * @function checkAppInstalled
@@ -50,7 +50,7 @@ If the `function` is on some namespace, for example : `app.checkAppInstalled`
  * @desc 通过packageName(Android)获取本地指定应用的本版号
  */
 ```
-### `function` - doc.json
+### `@function` - doc.json
 ```js
 {
   "app": {
@@ -66,7 +66,7 @@ If the `function` is on some namespace, for example : `app.checkAppInstalled`
 }
 ```
 
-### `namespace`
+### `@namespace`
 If you want to note namespace alone, for example : `app`
 ```js
 /**
@@ -74,7 +74,7 @@ If you want to note namespace alone, for example : `app`
  * @desc 应用模块
  */
 ```
-### `namespace` - doc.json
+### `@namespace` - doc.json
 ```js
 {
   "app": {
@@ -87,7 +87,7 @@ If you want to note namespace alone, for example : `app`
 }
 ```
 
-### `attribute`
+### `@attribute`
 ```js
 /**
  * @attribute isAppInstalled
@@ -101,7 +101,7 @@ If the `attribute` is on some namespace, for example : `app.isAppInstalled`
  * ...
  */
 ```
-### `attribute` - doc.json
+### `@attribute` - doc.json
 ```js
 {
   "app": {
@@ -117,7 +117,7 @@ If the `attribute` is on some namespace, for example : `app.isAppInstalled`
 }
 ```
 
-### `event`
+### `@event`
 ```js
 /**
  * @event qbrowserPullDown
@@ -128,7 +128,7 @@ If the `attribute` is on some namespace, for example : `app.isAppInstalled`
  * });
  */
 ```
-### `event` - doc.json
+### `@event` - doc.json
 ```js
 {
   "event": {
@@ -148,7 +148,7 @@ If the `attribute` is on some namespace, for example : `app.isAppInstalled`
 }
 ```
 
-### `class`
+### `@class`
 ```js
 /**
  * @class Animal
@@ -171,7 +171,7 @@ If the `attribute` is on some namespace, for example : `app.isAppInstalled`
  *
  */
 ```
-### `class` - doc.json
+### `@class` - doc.json
 ```js
 {
   "class": {
@@ -208,7 +208,7 @@ If the `attribute` is on some namespace, for example : `app.isAppInstalled`
   }
 }
 ```
-### `param`
+### `@param`
 ```js
 /**
  * @function app.checkAppInstalled
@@ -223,7 +223,7 @@ If the `attribute` is on some namespace, for example : `app.isAppInstalled`
  * @note for identifier 这是关于`identifier`的提示
  */
 ```
-### `param` - doc.json
+### `@param` - doc.json
 ```js
 {
   "app": {
@@ -286,7 +286,8 @@ If the `attribute` is on some namespace, for example : `app.isAppInstalled`
 ```
 * you can describe `object` by use `.`
 * also you can use `for` keyword to extend some specific `param`
-### `example`
+
+### `@example`
 ```js
 /**
  * @function app.checkAppInstalled
@@ -297,7 +298,7 @@ If the `attribute` is on some namespace, for example : `app.isAppInstalled`
  * });
  */
 ```
-### `example` - doc.json
+### `@example` - doc.json
 ```js
 {
   "app": {
