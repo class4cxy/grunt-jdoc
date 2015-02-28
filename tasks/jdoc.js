@@ -238,7 +238,7 @@ module.exports = function (grunt) {
 
             root = root || docJSON;
             var tmp = space ? root[space] : root;
-            var singleField = ['function', 'desc', 'namespace', 'class', 'event', 'attribute', 'type'];
+            var singleField = ['function', 'desc', 'namespace', 'class', 'event', 'attribute', 'type', 'prototype'];
             // array
             if ( tmp.length && tmp.forEach ) {
 
