@@ -34,7 +34,7 @@ grunt.initConfig({
   }
 });
 ```
-## js demo
+## js demo - build in @tag
 
 ### `@function`
 ```js
@@ -309,9 +309,79 @@ If the `attribute` is on some namespace, for example : `app.isAppInstalled`
 ```
 * you can note more than one examples
 
-### `more`
+## js demo - user-defined @tag
 * you can use any note tag you want, for example: `@support`, `@note`, `@important` etc.
-* every user-defined tag can use `for` keyword to extend some specific `param`
+* every user-defined tag can use `for` keyword to extend some specific `@param`
+### `user-defined tag`
+```js
+/**
+ * @function app.checkAppInstalled
+ * @desc 通过packageName(Android)获取本地指定应用的本版号
+ *
+ * @param {String} identifier 要查询的 identifier。
+ * @param {Function} callback 回调函数
+ * @param {String} callback.result 返回查询结果。
+ *
+ * @yourtag this is an user-defined tag of `app.checkAppInstalled`
+ * @yourtag2 for callback.result this is an user-defined tag of `callback.result`
+ *
+ */
+```
+### `user-defined tag` - doc.json
+```js
+{
+  "app": {
+    "property": {
+      "checkAppInstalled": {
+        "detail": {
+          "function": "app.checkAppInstalled",
+          "desc": "通过packageName(Android)获取本地指定应用的本版号",
+          "yourtag": [
+            {
+              "key": "yourtag",
+              "field": "this is an user-defined tag of `app.checkAppInstalled`",
+              "belong": ""
+            }
+          ],
+          "yourtag2": [],
+          "param": [
+            {
+              "key": "param",
+              "field": "identifier",
+              "type": "String",
+              "optional": false,
+              "desc": " 要查询的 identifier。\r"
+            },
+            {
+              "key": "param",
+              "field": "callback",
+              "type": "Function",
+              "optional": false,
+              "desc": " 回调函数\r",
+              "param": [
+                {
+                  "key": "param",
+                  "field": "result",
+                  "type": "String",
+                  "optional": false,
+                  "desc": " 返回查询结果。\r",
+                  "yourtag2": [
+                    {
+                      "key": "yourtag2",
+                      "field": "this is an user-defined tag of `callback.result`",
+                      "belong": "callback.result"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+}
+```
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
