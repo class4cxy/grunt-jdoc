@@ -65,6 +65,7 @@ If the `function` is on some namespace, for example : `app.checkAppInstalled`
   }
 }
 ```
+* `grunt-jdoc` can handle any `object` automation
 
 ### `@namespace`
 If you want to note namespace alone, for example : `app`
