@@ -312,6 +312,7 @@ If the `attribute` is on some namespace, for example : `app.isAppInstalled`
 ## js demo - user-defined @tag
 * you can use any note tag you want, for example: `@support`, `@note`, `@important` etc.
 * every user-defined tag can use `for` keyword to extend some specific `@param`
+
 ### `user-defined tag`
 ```js
 /**
