@@ -29,7 +29,7 @@ module.exports = function (grunt) {
         // 目前只有`param`, `example`
         var rSpecialField = {
             param : {
-                exp: /\s*\*\s*@param\s*{([\w.-_]*)}\s*(\[?[\w.-_]*\]?)([^\n]*)?/g,
+                exp: /\s*\*\s*@param\s*{([^\}]*?)}\s*(\[?[\w.-_]*\]?)([^\n]*)?/g,
                 factory: function (holder, all, type, field, tx) {
                     // 可选标识
                     var optional = false;

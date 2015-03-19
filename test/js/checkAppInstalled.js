@@ -2,9 +2,9 @@
  * @function app.checkAppInstalled
  * @desc 通过packageName(Android)获取本地指定应用的本版号
  *
- * @param {String} identifier 要查询的 identifier。如：Android 微信是 "com.tencent.mm"。
+ * @param {String|Object} identifier 要查询的 identifier。如：Android 微信是 "com.tencent.mm"。
  * @param {Function} callback 回调函数
- * @param {String} callback.result 返回查询结果。正常返回 app 的版本号字符串，若没有查询到则返回 0 字符串
+ * @param {String|Object} callback.result 返回查询结果。正常返回 app 的版本号字符串，若没有查询到则返回 0 字符串
  *
  * @example
  * mqq.app.checkAppInstalled(id, function (ret) {
