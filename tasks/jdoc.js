@@ -53,7 +53,10 @@ module.exports = function (grunt) {
                 factory: function (holder, all, code) {
                     holder.push({
                         key: 'example',
-                        field: code.replace(/\*\s/g, '').replace(/\s$/g, '')
+                        field: code.replace(/\*\s/g, '')
+                                   .replace(/\s$/g, '')
+                                   .replace(/</g, '&lt;')
+                                   .replace(/>/g, '&gt;')
                     })
                 }
             }

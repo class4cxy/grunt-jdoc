@@ -10,6 +10,9 @@
  * mqq.app.checkAppInstalled(id, function (ret) {
  *     console.log(ret); // 5.3.1
  * });
+ * <meta itemprop="name" content="这是分享的标题"/>
+ * <meta itemprop="image" content="http://imgcache.qq.com/qqshow/ac/v4/global/logo.png" />
+ * <meta name="description" itemprop="description" content="这是要分享的内容" />
  *
  * @support iOS not support
  * @support android 4.2
