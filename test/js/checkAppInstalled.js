@@ -16,6 +16,7 @@
  *
  * @support iOS not support
  * @support android 4.2
+ * @discard 1
  */
 
 /**

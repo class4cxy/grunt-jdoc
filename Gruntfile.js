@@ -15,6 +15,9 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('package.json'),
         jdoc: {
             all: {
+                options: {
+                  singleTag: ['discard']
+                },
                 src: 'test/js/checkAppInstalled.js',
                 target: 'docs'
             }

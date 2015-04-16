@@ -12,6 +12,10 @@ module.exports = function (grunt) {
 
     grunt.registerMultiTask('jdoc', 'Replace text patterns with applause.', function () {
 
+        var options = grunt.task.current.options({'private': true});
+        // 单值标签，该类标签不会以数组的形式存储
+        var singleTag = (options.singleTag || []).concat(['function', 'desc', 'namespace', 'class', 'event', 'attribute', 'type', 'prototype']);
+
         // 根对象
         var docJSON = {};
         // 文档标识匹配
@@ -241,14 +245,14 @@ module.exports = function (grunt) {
 
             root = root || docJSON;
             var tmp = space ? root[space] : root;
-            var singleField = ['function', 'desc', 'namespace', 'class', 'event', 'attribute', 'type', 'prototype'];
+            // var singleField = ['function', 'desc', 'namespace', 'class', 'event', 'attribute', 'type', 'prototype'].;
             // array
             if ( tmp.length && tmp.forEach ) {
 
                 var tmpFields = {};
                 // 通用处理
                 tmp.forEach(function (item) {
-                    if ( singleField.indexOf(item.key) > -1 ) {
+                    if ( singleTag.indexOf(item.key) > -1 ) {
                         tmpFields[item.key] = item.field;
                     } else {
                         tmpFields[item.key] = tmp.filter(function (field) {
