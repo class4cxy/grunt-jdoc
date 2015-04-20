@@ -10,6 +10,21 @@
  * mqq.app.checkAppInstalled(id, function (ret) {
  *     console.log(ret); // 5.3.1
  * });
+ *
+ * @example
+ * mqq.app.checkAppInstalled(id, function (ret) {
+ *     console.log(ret); // 5.3.2
+ * });
+ *
+ * @example
+ * mqq.app.checkAppInstalled(id, function (ret) {
+ *     console.log(ret); // 5.3.3
+ * });
+ *
+ * @example
+ * mqq.app.checkAppInstalled(id, function (ret) {
+ *     console.log(ret); // 5.3.4
+ * });
  * <meta itemprop="name" content="这是分享的标题"/>
  * <meta itemprop="image" content="http://imgcache.qq.com/qqshow/ac/v4/global/logo.png" />
  * <meta name="description" itemprop="description" content="这是要分享的内容" />

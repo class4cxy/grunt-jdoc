@@ -53,7 +53,7 @@ module.exports = function (grunt) {
                 }
             },
             example : {
-                exp: /\s*\*\s*@example[^\n]+([^@]+)/g,
+                exp: /@example[^\n]+([^@]+)/g,
                 factory: function (holder, all, code) {
                     holder.push({
                         key: 'example',
@@ -184,7 +184,7 @@ module.exports = function (grunt) {
             if ( content ) {
 
                 var Slice = Array.prototype.slice;
-                // grunt.log.writeln(content)
+                // 识别注释标识
                 content.replace(rDocFeature, function (all, doc) {
                     if ( doc ) {
 
@@ -220,6 +220,7 @@ module.exports = function (grunt) {
                         // 特殊字段匹配，处理
                         for ( var i in rSpecialField ) {
                             var item = rSpecialField[i];
+                            // reset last Index
                             doc.replace(item.exp, function () {
                                 var args = Slice.call(arguments, 0);
                                 // inset holder
