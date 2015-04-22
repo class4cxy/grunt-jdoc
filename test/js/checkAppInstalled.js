@@ -4,6 +4,14 @@
  *
  * @param {String|Object} identifier 要查询的 identifier。如：Android 微信是 "com.tencent.mm"。
  * @param {Function} callback 回调函数
+ * @options for identifier 1
+ * @options for identifier 2
+ * @options for identifier 3
+ * @options for identifier 4
+ * @note for identifier 1
+ * @note for identifier 2
+ * @note for identifier 3
+ * @note for identifier 4
  * @param {String|Object} callback.result 返回查询结果。正常返回 app 的版本号字符串，若没有查询到则返回 0 字符串
  *
  * @example

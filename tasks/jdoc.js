@@ -369,16 +369,14 @@ module.exports = function (grunt) {
                     // grunt.log.writeln(i)
                         var field = api[i];
                         // grunt.log.writeflags(field)
-                        if ( field && field.length ) {
-                            for ( var m = field.length-1; m >= 0; m -- ) {
-                                var item = field[m];
+                        if ( field && field.forEach ) {
+                            field.forEach(function (item) {
                                 if ( item.belong ) {
-                                    // grunt.log.writeln(item.belong.split('.'))
-                                    // field[k] = null;
-                                    field.splice(m, 1);
+                                    // field.splice(m, 1);
                                     handleFieldBelong(i, item.belong.split('.'), api.param, item)
                                 }
-                            }
+                            });
+                            delete api[i];
                         }
                     }
                 }
