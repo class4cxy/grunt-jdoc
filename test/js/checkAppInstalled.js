@@ -37,6 +37,9 @@
  * <meta itemprop="image" content="http://imgcache.qq.com/qqshow/ac/v4/global/logo.png" />
  * <meta name="description" itemprop="description" content="这是要分享的内容" />
  *
+ * @support for identifier android 4.2
+ * @support for identifier iOS 4.2
+ *
  * @support iOS not support
  * @support android 4.2
  * @discard 1
