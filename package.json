@@ -1,7 +1,7 @@
 {
   "name": "grunt-jdoc",
   "description": "grunt plugin for generate doc form javascript source",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "homepage": "http://www.alloyteam.com/",
   "author": {
     "name": "jdochen",

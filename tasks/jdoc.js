@@ -53,7 +53,7 @@ module.exports = function (grunt) {
                 }
             },
             example : {
-                exp: /@example[^\n]+([^@]+)/g,
+                exp: /@example[^\n]*([^@]+)/g,
                 factory: function (holder, all, code) {
                     holder.push({
                         key: 'example',
