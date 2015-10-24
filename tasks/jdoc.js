@@ -30,7 +30,7 @@ module.exports = function (grunt) {
         // -> @desc for someParam some describe only for some param
         var rCommField = /\s*\*\s*@([\w.-_]*)\s*(for?\s[\w.-_]*)?\s*([^\n]*)\n/g;
         // 特殊字段匹配处理
-        // 目前只有`param`, `example`
+        // 目前只有`param`, `example`, `return`
         var rSpecialField = {
             param : {
                 exp: /\s*\*\s*@param\s*{([^\}]*?)}\s*(\[?[\w.-_]*\]?)([^\n]*)?/g,
@@ -48,6 +48,17 @@ module.exports = function (grunt) {
                         field: field,
                         type: type,
                         optional: optional,
+                        desc: tx
+                    });
+                }
+            },
+            "return" : {
+                exp: /\s*\*\s*@return\s*{([^\}]*?)}\s*(\[?[\w.-_]*\]?)([^\n]*)?/g,
+                factory: function (holder, all, type, field, tx) {
+                    holder.push({
+                        key: 'return',
+                        field: field,
+                        type: type,
                         desc: tx
                     });
                 }
@@ -264,8 +275,13 @@ module.exports = function (grunt) {
 
                 // rewrite
                 if ( space ) {
-                    // grunt.log.writeln(space);
-                    handleParamTree(tmpFields);
+                    if ( tmpFields.param ) {
+                        handleParamTree(tmpFields, 'param');
+                    }
+                    if ( tmpFields['return'] ) {
+                        handleParamTree(tmpFields, 'return');
+                    }
+                    // handleParamTree(tmpFields);
                     handleFieldsTree(tmpFields);
                     root[space] = tmpFields;
                 }
@@ -315,20 +331,22 @@ module.exports = function (grunt) {
         }
 
         // 参数层级化
-        function handleParamTree (api) {
-            var params = api.param;
+        function handleParamTree (api, field) {
+            var params = api[field];
+            // console.log(params)
             if ( params && params.length ) {
+                // console.log(params)
                 params.forEach(function (param, k) {
                     // callback.result -> ['callback', 'result']
                     var paramNames = param.field.split('.');
                     if ( paramNames && paramNames.length > 1 ) {
                         // 先清除之前的引用
                         params[k] = null;
-                        handleParamBelong('param', paramNames, params, param)
+                        handleParamBelong(field, paramNames, params, param)
                     }
                 });
                 // clean empty param
-                api.param = params.filter(function (param) {
+                api[field] = params.filter(function (param) {
                     return param ? true : false;
                 });
             }

@@ -40,6 +40,11 @@
  * @support for identifier android 4.2
  * @support for identifier iOS 4.2
  *
+ * @return {Object} data 返回数据
+ * @return {String} data.title 标题
+ * @return {String} data.content 内容
+ * @return {String} data.url 连接
+ *
  * @support iOS not support
  * @support android 4.2
  * @discard 1
